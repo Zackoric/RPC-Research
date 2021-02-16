@@ -1,0 +1,49 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary")
+
+# NOTE: instead of 'cc_grpc_library' from '@com_github_grpc_grpc'
+# could also use 'cpp_grpc_library' from 'rules_proto_grpc' (by first
+# bringing in 'rules_proto_grpc' in WORKSPACE.bazel).
+load("@com_github_grpc_grpc//bazel:cc_grpc_library.bzl", "cc_grpc_library")
+
+proto_library(
+    name = "kv_store",
+    srcs = ["protos/kv_store.proto"],
+)
+
+cc_proto_library(
+    name = "kv_store_proto",
+    deps = [":kv_store"],
+)
+
+cc_grpc_library(
+    name = "kv_store_grpc",
+    srcs = [":kv_store"],
+    grpc_only = True,
+    deps = [":kv_store_proto"],
+)
+
+cc_binary(
+    name = "kv_store_server",
+    srcs = [
+        "kv_store/kv_store_server.cpp",
+        "kv_store/kv_store_server.h",
+    ],
+    #    data = ["kv_store/kv_store_db.json"],
+    deps = [
+        ":kv_store_grpc",
+        "@stout-grpc//:grpc",
+    ],
+)
+
+cc_binary(
+    name = "kv_store_client",
+    srcs = [
+        "kv_store/kv_store_client.cpp",
+        "kv_store/kv_store_client.h",
+    ],
+    #    data = ["kv_store/kv_store_db.json"],
+    deps = [
+        ":kv_store_grpc",
+        "@stout-grpc//:grpc",
+    ],
+)

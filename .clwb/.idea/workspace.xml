@@ -8,6 +8,9 @@
     <option name="projectViewFile" value="$PROJECT_DIR$/.bazelproject" />
     <option name="workspaceRoot" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="BlazeSyncStatusState">
+    <option name="dirty" value="true" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated />
   </component>
@@ -17,7 +20,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7841c9eb-b745-40d4-b529-390a1ab8cdf5" name="Default Changelist" comment="" />
+    <list default="true" id="7841c9eb-b745-40d4-b529-390a1ab8cdf5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BUILD.bazel" beforeDir="false" afterPath="$PROJECT_DIR$/../BUILD.bazel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WORKSPACE.bazel" beforeDir="false" afterPath="$PROJECT_DIR$/../WORKSPACE.bazel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kv_store/kv_store_server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../kv_store/kv_store_server.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +36,11 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1oX7upV4Z34QnRtnGw8wRCh7uNj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,7 +59,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
   </component>
-  <component name="RunManager" selected="Bazel Command.Bazel run :kv_store_client">
+  <component name="RunManager" selected="Bazel Command.Bazel run :kv_store_server">
     <configuration name="Bazel build :kv_store_grpc" type="BlazeCommandRunConfigurationType" factoryName="Bazel Command" nameIsGenerated="true">
       <blaze-settings handler-id="BlazeCommandGenericRunConfigurationHandlerProvider" blaze-command="build" kind="cc_library">
         <env_state>
@@ -63,6 +77,17 @@
         <env_state>
           <envs />
         </env_state>
+      </blaze-settings>
+      <method v="2">
+        <option name="Blaze.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Bazel build :leveldb" type="BlazeCommandRunConfigurationType" factoryName="Bazel Command" nameIsGenerated="true">
+      <blaze-settings handler-id="BlazeCommandGenericRunConfigurationHandlerProvider" blaze-command="build" kind="cc_binary">
+        <env_state>
+          <envs />
+        </env_state>
+        <blaze-target>@com_github_google_leveldb//:leveldb</blaze-target>
       </blaze-settings>
       <method v="2">
         <option name="Blaze.BeforeRunTask" enabled="true" />
@@ -105,6 +130,7 @@
       <item itemvalue="Bazel Command.Bazel run :kv_store_server" />
       <item itemvalue="Bazel Command.Bazel run :kv_store_client" />
       <item itemvalue="Bazel Command.Bazel build :kv_store_server" />
+      <item itemvalue="Bazel Command.Bazel build :leveldb" />
       <item itemvalue="Bazel Command.Bazel build :kv_store_grpc" />
     </list>
   </component>
@@ -119,7 +145,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613421306716</updated>
       <workItem from="1613421309505" duration="6758000" />
-      <workItem from="1613433986304" duration="8692000" />
+      <workItem from="1613433986304" duration="14971000" />
     </task>
     <servers />
   </component>
@@ -127,26 +153,30 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="422" y="205" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1613440068797">
+    <state x="422" y="205" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1613454619496">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="422" y="205" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1613440068797" />
-    <state width="939" height="290" key="GridCell.Tab.0.bottom" timestamp="1613442661485">
+    <state x="422" y="205" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1613454619496" />
+    <state x="705" y="352" width="506" height="384" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613459729041">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="939" height="290" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1613442661485" />
-    <state width="939" height="290" key="GridCell.Tab.0.center" timestamp="1613442661484">
+    <state x="705" y="352" width="506" height="384" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1613459729041" />
+    <state width="939" height="290" key="GridCell.Tab.0.bottom" timestamp="1613460026797">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="939" height="290" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1613442661484" />
-    <state width="939" height="290" key="GridCell.Tab.0.left" timestamp="1613442661483">
+    <state width="939" height="290" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1613460026797" />
+    <state width="939" height="290" key="GridCell.Tab.0.center" timestamp="1613460026797">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="939" height="290" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1613442661483" />
-    <state width="939" height="290" key="GridCell.Tab.0.right" timestamp="1613442661485">
+    <state width="939" height="290" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1613460026797" />
+    <state width="939" height="290" key="GridCell.Tab.0.left" timestamp="1613460026796">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="939" height="290" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1613442661485" />
+    <state width="939" height="290" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1613460026796" />
+    <state width="939" height="290" key="GridCell.Tab.0.right" timestamp="1613460026797">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="939" height="290" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1613460026797" />
     <state width="939" height="358" key="GridCell.Tab.1.bottom" timestamp="1613438870329">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

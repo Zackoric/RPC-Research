@@ -22,6 +22,8 @@
 #include <iostream>
 #include <memory>
 #include <iostream>
+#include "rocksdb/db.h"
+//#include <rock>
 
 #include "kv_store_server.h"
 
@@ -180,6 +182,16 @@ int main(int argc, char **argv)
 {
 	// Expect only arg: --db_path=path/to/route_guide_db.json.
 //    std::string db = routeguide::GetDbFileContent(argc, argv);
-	cout << "I am a living person!" << endl;
+	rocksdb::DB* db;
+	rocksdb::Options options;
+	options.create_if_missing = true;
+	rocksdb::Status status = rocksdb::DB::Open(options, "/tmp/saywhereisthisfile", &db);
+	assert(status.ok());
+	string value;
+//	cout << "i am alive!" << endl;
+//	db->Get(rocksdb::ReadOptions(), "key2", &value);
+//	cout << "value: " << value << endl;
+//	db->Put(rocksdb::WriteOptions(), "key2", "value123");
+//	return 0;
 	return RunServer();
 }

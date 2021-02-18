@@ -22,6 +22,15 @@ cc_grpc_library(
     deps = [":kv_store_proto"],
 )
 
+cc_import(
+  name = "rocksDB",
+  hdrs = glob(["rocksdb/*.h"]),
+  static_library = "librocksdb.a",
+  # If alwayslink is turned on,
+  # libmylib.a will be forcely linked into any binary that depends on it.
+  # alwayslink = 1,
+)
+
 cc_binary(
     name = "kv_store_server",
     srcs = [
@@ -29,9 +38,14 @@ cc_binary(
         "kv_store/kv_store_server.h",
     ],
     #    data = ["kv_store/kv_store_db.json"],
+
+    data = ["temp/testdb"],
+    linkopts = ["-ldl"],
     deps = [
         ":kv_store_grpc",
         "@stout-grpc//:grpc",
+        "rocksDB",
+#        "@com_github_google_leveldb//:leveldb",
     ],
 )
 

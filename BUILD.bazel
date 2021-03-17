@@ -6,15 +6,15 @@ load("@com_github_grpc_grpc//bazel:cc_grpc_library.bzl", "cc_grpc_library")
 
 ########################################################################
 
-#envoy_cc_binary(
-    #name = "embed-envoy",
-    #visibility = ["//visibility:public"],
-    #repository = "@envoy",
-    #srcs = ["main.cc"],
-    #deps = [
-        #"@envoy//source/exe:envoy_main_embed_lib",
-    #],
-#)
+envoy_cc_binary(
+	name = "embed-envoy",
+	visibility = ["//visibility:public"],
+	repository = "@envoy",
+	srcs = ["main.cc"],
+	deps = [
+		"@envoy//source/exe:envoy_main_embed_lib",
+	],
+)
 
 proto_library(
 	name = "kv_store",
